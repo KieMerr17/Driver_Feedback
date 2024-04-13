@@ -17,7 +17,7 @@ def feedback_generate():
     
     # Generate 10 random names
     driver_names = os.listdir("/workspace/Driver_Feedback/drivers")
-    routes = [f"Route {i}" for i in range(10)]
+    routes = os.listdir("/workspace/Driver_Feedback/routes")
 
     # Create a dropdown with the random names
     selected_name = st.selectbox("Select a name", driver_names)
