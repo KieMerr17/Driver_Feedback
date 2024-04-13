@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 import random
 import requests
+import os
 from openai import OpenAI
 from env import OPENAI_API_KEY 
 
@@ -15,7 +16,7 @@ def feedback_generate():
     st.write("#### To be used to quickly generate feedback for your driving sessions")
     
     # Generate 10 random names
-    driver_names = [f"Name {i}" for i in range(10)]
+    driver_names = os.listdir("/workspace/Driver_Feedback/drivers")
     routes = [f"Route {i}" for i in range(10)]
 
     # Create a dropdown with the random names
