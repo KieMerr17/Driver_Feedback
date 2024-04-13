@@ -6,6 +6,9 @@ import os
 from openai import OpenAI
 from env import OPENAI_API_KEY 
 
+# example feedback
+from feedback_examples.unit_1.unit_1_feedback import examples
+
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {OPENAI_API_KEY}"
@@ -14,17 +17,18 @@ headers = {
 def feedback_generate():
     st.write("#### To be used to quickly generate feedback for your driving sessions")
     
-    # Generate 10 random names
-    driver_names = os.listdir("/workspace/Driver_Feedback/drivers")
+    # import drivers names and routes
+    drivers = os.listdir("/workspace/Driver_Feedback/drivers")
     routes = os.listdir("/workspace/Driver_Feedback/routes")
 
-    # Create a dropdown with the random names
-    selected_name = st.selectbox("Select a name", driver_names)
+    # Create a dropdown for the drivers and routes
+    selected_driver = st.selectbox("Select a name", drivers)
     selected_route = st.selectbox("Select a route", routes)
+    feedback_example = examples
     
     # Add a button to generate feedback
     if st.button("Generate Feedback"):
-        prompt = f"What's the feedback for {selected_name} on {selected_route}?"
+        prompt = f"Using the following as an example of good feedback: {feedback_example}, provide me feedback for {selected_driver} on {selected_route}?"
         data = {
             "model": "gpt-3.5-turbo",
             "messages": [

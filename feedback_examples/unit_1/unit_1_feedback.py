@@ -1,0 +1,3 @@
+examples = [
+    "Alastair showed great competence in Unit 1 today. He successfully demonstrated the required standard of driving needed to operate in DC. We discussed some successful amber light situations where we needed to continue and not break heavy, so as not to teach the model to be breaking sharp. Alastair showed good understanding of motorway driving, keeping in the left lane at all times where possible and overtaking comfortably and within plenty of time and space. With great knowledge of setting up a Data Collection run and high standard of driving, overall a pass in this unit was given."
+]
