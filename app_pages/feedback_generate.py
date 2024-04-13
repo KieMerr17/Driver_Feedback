@@ -6,7 +6,6 @@ import os
 from openai import OpenAI
 from env import OPENAI_API_KEY 
 
-
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {OPENAI_API_KEY}"
@@ -38,10 +37,11 @@ def feedback_generate():
         response = requests.post("https://api.openai.com/v1/chat/completions", json=data, headers=headers)
         if response.status_code == 200:
             result = response.json()
-            st.write(result['choices'][0]['message']['content'].strip())
+            feedback_text = result['choices'][0]['message']['content'].strip()
+            edited_feedback = st.text_area("Feedback", value=feedback_text, height=200)
+            st.write("You can edit the feedback above.")
         else:
             st.error(f"Error: {response.status_code} - {response.text}")
 
 if __name__ == "__main__":
     feedback_generate()
-
