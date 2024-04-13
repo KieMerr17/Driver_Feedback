@@ -23,7 +23,7 @@ def feedback_generate():
 
     # Create a dropdown for the drivers and routes
     selected_driver = st.selectbox("Select a name", drivers)
-    selected_route = st.selectbox("Select a route", routes)
+    selected_route = st.multiselect("Select a route", routes)
     feedback_example = examples
     
     # Add a button to generate feedback
