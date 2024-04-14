@@ -34,7 +34,7 @@ def generate_feedback(selected_driver, selected_route):
         st.error(f"Error: {response.status_code} - {response.text}")
         return None
 
-def feedback_generate():
+def feedback_page():
     st.write("#### To be used to quickly generate feedback for your driving sessions")
 
     # Create a dropdown for the drivers and routes
@@ -49,4 +49,4 @@ def feedback_generate():
             st.write("You can edit the feedback above.")
 
 if __name__ == "__main__":
-    feedback_generate()
+    feedback_page()

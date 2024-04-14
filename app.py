@@ -2,11 +2,11 @@ import streamlit as st
 from app_pages.multipage import MultiPage
 
 # load pages scripts
-from app_pages.feedback_generate import feedback_generate
+from app_pages.page_two_feedback_generator import feedback_page
 
 app = MultiPage(app_name="Driver Feedback")  # Create an instance of the app
 
 # Add your app pages here using .add_page()
-app.add_page("Feedback Generator", feedback_generate)
+app.add_page("Feedback Generator", feedback_page)
 
 app.run()  # Run the app
