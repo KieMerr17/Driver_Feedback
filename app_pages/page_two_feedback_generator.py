@@ -3,19 +3,23 @@ import streamlit as st
 import random
 import requests
 import os
+
+# Chat GPT libraries and import of API Key
 from openai import OpenAI
 from env import OPENAI_API_KEY 
 
-# example feedback
-from form_info import drivers, routes, examples
+# information required to generate feedback
+from form_info import drivers, routes, examples, positive_points, negative_points
 
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {OPENAI_API_KEY}"
 }
 
-def generate_feedback(selected_driver, selected_route):
-    prompt = f"Using the following as an example of good feedback: {examples}, provide me feedback for {selected_driver} on {selected_route}?"
+# Connect to Chat GPT to create feedback using selected fields
+def generate_feedback(selected_driver, type_of_feedback, selected_route, positive_feedback, negative_feedback):
+    prompt = f"Using the following as an example of good feedback: {examples}, provide me with brand new {type_of_feedback} feedback for {selected_driver} on {selected_route}. Include {positive_feedback}, but also areas for improvement in {negative_feedback} give simple bullet points afterwords using {negative_feedback} on areas of improvement. Make sure everything reads as one complete feedback report, make sure selections are not enclosed in brackets or quotation marks"
+
     data = {
         "model": "gpt-3.5-turbo",
         "messages": [
@@ -28,22 +32,31 @@ def generate_feedback(selected_driver, selected_route):
     response = requests.post("https://api.openai.com/v1/chat/completions", json=data, headers=headers)
     if response.status_code == 200:
         result = response.json()
+
+        # Print out just the message provided in Chat GPT result
         feedback_text = result['choices'][0]['message']['content'].strip()
         return feedback_text
     else:
+        # Error handling
         st.error(f"Error: {response.status_code} - {response.text}")
         return None
 
+# Information to be displayed on the page
 def feedback_page():
     st.write("#### To be used to quickly generate feedback for your driving sessions")
 
-    # Create a dropdown for the drivers and routes
-    selected_driver = st.selectbox("Select a name", drivers)
-    selected_route = st.multiselect("Select a route", routes)
+    # Create the drop down menus
+    selected_driver = st.selectbox("Select which driver you require feedback", drivers)
+    type_of_feedback = st.selectbox("Select which type of feedback required", ["Positive", "Constructive", "Negative"])
+    selected_route = st.multiselect("Select all routes required", routes)
+    positive_feedback = st.multiselect("What did they do well?", positive_points)
+    negative_feedback = st.multiselect("What do they need to improve?", negative_points)
+
+
     
     # Add a button to generate feedback
     if st.button("Generate Feedback"):
-        feedback_text = generate_feedback(selected_driver, selected_route)
+        feedback_text = generate_feedback(selected_driver, type_of_feedback, selected_route, positive_feedback, negative_feedback)
         if feedback_text is not None:
             edited_feedback = st.text_area("Feedback", value=feedback_text, height=200)
             st.write("You can edit the feedback above.")

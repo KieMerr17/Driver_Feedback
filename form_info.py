@@ -40,6 +40,22 @@ examples = {
                             "your AV skills and work on ensuring you uphold the required driving standards."
 }
 
+positive_points = [
+    "Good observations",
+    "Good hand position on the road",
+    "Good blindspot checks when moving away",
+    "Good understanding of the highway code",
+    "Good forward planning"
+]
+
+negative_points = [
+    "Easily distracted",
+    "Bad observations",
+    "More forward planning required",
+    "Poor blindspot checks"
+]
+
+
 drivers = [
     "Aquil Rose",
     "Alastair Mead",
