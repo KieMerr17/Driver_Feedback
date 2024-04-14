@@ -6,7 +6,7 @@ def site_information():
     st.write("#### Use this site to quickly help you generate feedback for your training sessions")
     st.write("##### Steps:")
     st.write("- Open up the side bar and select 'Feedback Generator'")
-    st.write("- Select your drivers name, the type of feedback you require (Positive/Constructive),")
+    st.write("- Select your drivers name, the type of feedback you require (Positive/Constructive/Negative),")
     st.write("- which routes you have completed.")
     st.write("- what positive points were observed during todays training, what learning points were discussed to improve on.")
     st.write("- clicke the generate button.")
