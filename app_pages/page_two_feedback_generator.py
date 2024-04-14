@@ -6,6 +6,7 @@ import os
 
 # Chat GPT libraries and import of API Key
 from openai import OpenAI
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 # information required to generate feedback
 from form_info import drivers, routes, examples, positive_points, negative_points
