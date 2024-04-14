@@ -6,7 +6,6 @@ import os
 
 # Chat GPT libraries and import of API Key
 from openai import OpenAI
-from env import OPENAI_API_KEY 
 
 # information required to generate feedback
 from form_info import drivers, routes, examples, positive_points, negative_points
