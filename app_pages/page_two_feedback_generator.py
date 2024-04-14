@@ -18,7 +18,17 @@ headers = {
 
 # Connect to Chat GPT to create feedback using selected fields
 def generate_feedback(selected_driver, type_of_feedback, selected_route, positive_feedback, negative_feedback):
-    prompt = f"Using the following as an example of good feedback: {examples}, provide me with brand new {type_of_feedback} feedback for {selected_driver} on {selected_route}. Include {positive_feedback}, but also areas for improvement in {negative_feedback} give simple bullet points afterwords using {negative_feedback} on areas of improvement. Make sure everything reads as one complete feedback report, make sure selections are not enclosed in brackets or quotation marks"
+
+    # Choose which example to use depending on route selected
+    if selected_route == "Unit 1 - High Standard Driving":
+        example_data = examples["Unit 1"]
+    elif selected_route == "Unit 2 - CRT Millbrook":
+        example_data = examples["Unit 2"]
+    else:
+        example_data = examples["Open-Road Testing"]
+
+    # Message to be sent to Chat GPT
+    prompt = f"Using the following as an example of good feedback: {example_data}, provide me with brand new {type_of_feedback} feedback for {selected_driver} on {selected_route}. Include {positive_feedback}, but also areas for improvement in {negative_feedback} give simple bullet points afterwords using {negative_feedback} on areas of improvement. Make sure everything reads as one complete feedback report, make sure selections are not enclosed in brackets or quotation marks"
 
     data = {
         "model": "gpt-3.5-turbo",
