@@ -36,7 +36,7 @@ def intervention_perception():
             # Messages to display depending on intervention timing
             if elapsed_time < 5:
                 st.write("Great that you intervened, have a think if this may have been a little early")
-            elif 5 < elapsed_time < 8:
+            elif 3.5 < elapsed_time < 5.5:
                 st.write("Correct Intervention")
             else:
                 st.write("Your Intervention was too late")
