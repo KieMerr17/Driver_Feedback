@@ -1,14 +1,7 @@
 numpy
 pandas
 matplotlib
-seaborn
-plotly
 openai
 
 streamlit
 
-scikit-learn
-tensorflow-cpu
-keras
-protobuf
-altair<5
