@@ -15,15 +15,7 @@ def intervention_perception():
     # Load the video and start time
     video_url = "video_1.mp4"
     start_time = session_state.start_time if session_state.timer_running else 0
-
-    # Embedding video with autoplay using HTML
-    video_html = f"""
-    <video width="100%" controls autoplay>
-        <source src="{video_url}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    """
-    st.markdown(video_html, unsafe_allow_html=True)
+    st.video(video_url, format='video/mp4', start_time=start_time)
 
     button_slot = st.empty()  # Empty slot for the buttons
 
@@ -59,3 +51,4 @@ def intervention_perception():
 
 if __name__ == "__main__":
     intervention_perception()
+
