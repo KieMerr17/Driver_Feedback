@@ -13,7 +13,7 @@ def intervention_perception():
     st.write("Watch the video and click when you would carry out your intervention.")
 
     # Load the video and start time
-    video_url = "https://drive.google.com/file/d/1MzXJThJxGZInmHmX6hYePeiZP4gn6SMb/view?usp=sharing"
+    video_url = "/workspace/Driver_Feedback/media/video_1.mp4"
     start_time = session_state.start_time if session_state.timer_running else 0
     st.video(video_url, format='video/mp4', start_time=start_time)
 
