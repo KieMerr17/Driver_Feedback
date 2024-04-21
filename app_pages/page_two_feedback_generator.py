@@ -53,6 +53,7 @@ def generate_feedback(selected_driver, type_of_feedback, selected_route, positiv
 
 # Information to be displayed on the page
 def feedback_page():
+    st.title("Feedback Generator")
     st.write("#### To be used to quickly generate feedback for your driving sessions")
 
     # Create the drop down menus

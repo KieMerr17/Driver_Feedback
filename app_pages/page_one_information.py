@@ -3,6 +3,7 @@ import streamlit as st
 
 
 def site_information():
+    st.title("Feedback Generator")
     st.write("#### Use this site to quickly help you generate feedback for your training sessions")
     st.write("##### Steps:")
     st.write("- Open up the side bar and select 'Feedback Generator'")
