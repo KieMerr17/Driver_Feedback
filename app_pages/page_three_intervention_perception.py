@@ -54,9 +54,10 @@ def intervention_perception():
 
         # Actions on clicking 'Intervene'
         if button_slot:
+            intervention_time = elapsed_time - 3
             session_state.timer_running = False
             
-            st.write(elapsed_time)
+            st.write(round(intervention_time, 2))
 
             # Messages to display depending on intervention timing
             if elapsed_time < 3.5:
@@ -72,4 +73,3 @@ def intervention_perception():
 
 if __name__ == "__main__":
     intervention_perception()
-
