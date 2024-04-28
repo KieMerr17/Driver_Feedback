@@ -3,12 +3,7 @@ import base64
 import os
 import random
 import time
-
-# Video variables and intervention window times
-videos = [
-    {"video_1": (3.5, 4.5)},
-    {"video_2": (4, 5)}
-]
+from videos_and_timings import videos
 
 # Begin timer when session video is loaded
 class SessionState:
@@ -20,18 +15,23 @@ session_state = SessionState()
 
 
 def intervention_perception():
-    # Randomly select a video
+    # Randomly select a video and format it to .mp4
     selected_video_dict = random.choice(videos)
-    selected_video_key = random.choice(list(selected_video_dict.keys())) + ".mp4"
+    selected_video_key = list(selected_video_dict.keys())[0]
+    intervention_start_time, intervention_end_time = selected_video_dict[selected_video_key]
+    video_format = list(selected_video_dict.keys())[0] + ".mp4"
+
+    # Display intervention window timings for selected video
+    st.write("Intervention window start time: ", intervention_start_time)
+    st.write("Intervention window end time: ", intervention_end_time)
     st.write(selected_video_key)
 
     # Directory of all videos
     media_dir = "/workspace/Driver_Feedback/media"
 
-
     if selected_video_key:
         # Load the video
-        video_path = os.path.join(media_dir, selected_video_key)
+        video_path = os.path.join(media_dir, video_format)
         video_file = open(video_path, "rb").read()
 
         # Display the video
@@ -60,11 +60,11 @@ def intervention_perception():
             st.write(round(intervention_time, 2))
 
             # Messages to display depending on intervention timing
-            if elapsed_time < 3.5:
+            if intervention_time < intervention_start_time:
                 st.write("Great that you intervened, have a think if this may have been a little early")
-            elif 3.5 < elapsed_time < 4.5:
+            elif intervention_start_time < intervention_time < intervention_end_time:
                 st.write("Correct Intervention")
-            else:
+            elif intervention_time > intervention_end_time:
                 st.write("Your Intervention was too late")
 
     else:
