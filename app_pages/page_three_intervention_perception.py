@@ -40,7 +40,8 @@ def intervention_perception():
         video_path = os.path.join(media_dir, video_format)
 
         # Display the video with autoplay
-        st.video(video_path, autoplay=True)
+        video_container = st.empty()
+        video_container.video(video_path, autoplay=True)
 
         if not session_state.timer_running:
             session_state.start_time = time.time()
@@ -49,6 +50,7 @@ def intervention_perception():
         elapsed_time = time.time() - session_state.start_time
 
         button_slot = st.button("Intervene")
+        next_button_slot = st.button("Next")
 
         # Actions on clicking 'Intervene'
         if button_slot:
@@ -65,12 +67,28 @@ def intervention_perception():
             elif intervention_time > intervention_end_time:
                 st.write("Your Intervention was too late")
 
-            # Allow selecting a new video
+            # No need to set select_new_video to True, as we want to keep the same video
+
+        # Actions on clicking 'Next'
+        if next_button_slot:
             session_state.select_new_video = True
+            session_state.timer_running = False
+            session_state.start_time = time.time()
+            st.experimental_rerun()  # Refresh the page
+
+            # Autoplay the video
+            st.write(
+                """
+                <script>
+                    const video = document.querySelector('video');
+                    video.play();
+                </script>
+                """,
+                unsafe_allow_html=True
+            )
 
     else:
         st.write("No video files found in the /media directory.")
-
 
 if __name__ == "__main__":
     intervention_perception()
