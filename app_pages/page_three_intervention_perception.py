@@ -55,7 +55,7 @@ def intervention_perception():
         # Actions on clicking 'Intervene'
         if button_slot:
             intervention_time = elapsed_time
-            session_state.timer_running = False
+            session_state.timer_running = True
             
             st.write(round(intervention_time, 2))
 
@@ -67,25 +67,12 @@ def intervention_perception():
             elif intervention_time > intervention_end_time:
                 st.write("Your Intervention was too late")
 
-            # No need to set select_new_video to True, as we want to keep the same video
-
         # Actions on clicking 'Next'
         if next_button_slot:
             session_state.select_new_video = True
             session_state.timer_running = False
             session_state.start_time = time.time()
             st.experimental_rerun()  # Refresh the page
-
-            # Autoplay the video
-            st.write(
-                """
-                <script>
-                    const video = document.querySelector('video');
-                    video.play();
-                </script>
-                """,
-                unsafe_allow_html=True
-            )
 
     else:
         st.write("No video files found in the /media directory.")
