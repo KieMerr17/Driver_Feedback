@@ -8,7 +8,7 @@ import os
 from env import OPENAI_API_KEY
 
 # information required to generate feedback
-from form_info import drivers, routes, examples, positive_points, negative_points
+from form_info import routes, examples
 
 headers = {
     "Content-Type": "application/json",
@@ -59,9 +59,8 @@ def feedback_page():
     selected_driver = st.text_input("Enter the driver's name:")
     type_of_feedback = st.selectbox("Select which type of feedback required", ["Positive", "Constructive", "Negative"])
     selected_route = st.multiselect("Select all routes required", routes)
-    positive_feedback = st.multiselect("What did they do well?", positive_points)
-    negative_feedback = st.multiselect("What do they need to improve?", negative_points)
-
+    positive_feedback = st.text_input("What did they do well? (Separate points by commas)")
+    negative_feedback = st.text_input("What do they need to improve? (Separate points by commas)")
 
     
     # Add a button to generate feedback

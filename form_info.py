@@ -26,60 +26,8 @@ examples = {
                 "he demonstrated an understanding of what was discussed and provided good, safe interventions. His handover to AV at the start was a \n"
                 "little delayed, however with experience, it became a smooth transition. Interventions were made safely and controlled without any \n"
                 "over input. Overall Alastair achieved a pass in Unit 2, demonstrating safe and controlled handover and intervening of AV when required.",
-    "Open-Road Testing" : "This morning Kamran started off with an AFT around the Crouch End route. He was making a good effort to say the Taxonomy with his interventions and was showing improvement with it throughout the day. \n"
-                            "We spoke about bringing the model to a stop and/or make it remain stopped if pedestrians have not completed crossing the road at Zebra crossings. \n"
-                            "We had one situation where we were the first vehicle at red lights at a pedestrian crossing, the lights changed to green and the AV began to drive on, however there was a pedestrian on the left that had begun crossing and was increasing her pace to go across us. Kamran had not intervened until I asked him to stop the car. I asked Kamran why he didn’t stop the car when he saw her, he said by the time he did his all around checks, he didnt realise that she would increase her pace and continue to cross. We spoke about the importance of stopping the model as soon as you see any potential hazard with pedestrians, even if we have a green light. \n"
-                            "We moved on to do a Finsbury Park AFT where Kamaran continued to make good progress with his taxonomy. \n"
-                            "He had a couple of foot pedal interventions where he was slow to bring his hands up to the steering wheel. We spoke about the importance of grabbing the steering wheel simultaneously with every intervention. \n"
-                            " Learning points discussed: \n"
-                            "- Kamran needs to bring the car up to a good speed before engaging back in AV, as otherwise it slows significantly before picking up speed again posing a hazard to following vehicles \n"
-                            "- Try to work on not having as many accidental interventions \n" 
-                            "- Ensure both hands grab the wheel when you intervene \n"
-                            "- Be more observant of pedestrians on the road, a green light does not mean we can drive on if there is a pedestrian on the road, the same as Zebra crossings."
+    "Open-Road Testing" : "Sal showed excellent control of the systems moving to open-road testing and had great observations. Sal had great hand positioning on the steering wheel and demonstrated good reactions to developing situations on the road. We discussed the need to keep the hands on the wheel right up to pressing the button and Sal began to show this. \n"
+                            "Learning Objectives:\n"
+                            "Ensure you maintain contact with the steering wheel at all times\n"
+                            "Keep maintaining the level of observations your delivering"
 }
-
-positive_points = [
-    "Good observations",
-    "Good hand position on the road",
-    "Good blindspot checks when moving away",
-    "Good understanding of the highway code",
-    "Good forward planning"
-]
-
-negative_points = [
-    "Easily distracted",
-    "Bad observations",
-    "More forward planning required",
-    "Poor blindspot checks"
-]
-
-
-drivers = [
-    "Aquil Rose",
-    "Alastair Mead",
-    "Alin Rosu",
-    "Andy Hicks",
-    "Ben Cronin",
-    "Catalin Toma",
-    "Damian Turnball",
-    "Dan Anderson",
-    "Fuzail Ismail",
-    "Jahven Smith",
-    "James Turner",
-    "Jerome Kendall",
-    "Joe Fairclough",
-    "Joe Willbourne",
-    "Josh Williams",
-    "Kamran Khan",
-    "Katy Copping",
-    "Mohammed Mowlabux",
-    "Mohammed Uddin",
-    "Nathaniel Alleyne",
-    "Phillip Bell",
-    "Phillip Rees",
-    "Samir Mosawi",
-    "Vitor Velosa",
-    "Wayne Greg Jules",
-    "Zane Nodu",
-    "Zoe Teasdale"
-]
