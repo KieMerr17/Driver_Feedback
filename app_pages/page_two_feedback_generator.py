@@ -56,7 +56,7 @@ def feedback_page():
     st.write("#### To be used to quickly generate feedback for your driving sessions")
 
     # Create the drop down menus
-    selected_driver = st.selectbox("Select which driver you require feedback", drivers)
+    selected_driver = st.text_input("Enter the driver's name:")
     type_of_feedback = st.selectbox("Select which type of feedback required", ["Positive", "Constructive", "Negative"])
     selected_route = st.multiselect("Select all routes required", routes)
     positive_feedback = st.multiselect("What did they do well?", positive_points)
