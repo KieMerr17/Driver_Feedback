@@ -26,18 +26,16 @@ examples = {
                 "he demonstrated an understanding of what was discussed and provided good, safe interventions. His handover to AV at the start was a \n"
                 "little delayed, however with experience, it became a smooth transition. Interventions were made safely and controlled without any \n"
                 "over input. Overall Alastair achieved a pass in Unit 2, demonstrating safe and controlled handover and intervening of AV when required.",
-    "Open-Road Testing" : "Alastair did well carrying out open-road testing today with a good focus on safety. At Linton Street we had a discussion \n"
-                            "about the driving standards required here at Wayve and the importance for all drivers to maintain them. Alastair gives \n"
-                            "great 360 observations before and during AV testing. An area to improve would be ensuring he brings his hand position up \n"
-                            "on the steering wheel during DC and following making interventions. He carried out a successful solo drive at Linton street \n"
-                            "which he reported went well. We headed over to Sommers Town to familiarise him with this area, he carried out some \n"
-                            "successful testing in this area and started to feel more comfortable in his skills operating in AV. After lunch we had \n"
-                            "a discussion and emphasised the need for him to be more observant on more dynamic routes. He showed good ability to \n"
-                            "continually scan the area for hazards whilst in AV. At the end of the final run we did cover a keep clear sign on the floor. \n"
-                            "We closed the session with a discussion about driving standards here at Wayve and the need for these to be upheld, \n"
-                            "maintaining a good hand position on the steering wheel following intervening, and the importance of all round observations. \n"
-                            "Overall, good to see safety as a priority during AV with no concerns here, tomorrow we will look to further build upon \n"
-                            "your AV skills and work on ensuring you uphold the required driving standards."
+    "Open-Road Testing" : "This morning Kamran started off with an AFT around the Crouch End route. He was making a good effort to say the Taxonomy with his interventions and was showing improvement with it throughout the day. \n"
+                            "We spoke about bringing the model to a stop and/or make it remain stopped if pedestrians have not completed crossing the road at Zebra crossings. \n"
+                            "We had one situation where we were the first vehicle at red lights at a pedestrian crossing, the lights changed to green and the AV began to drive on, however there was a pedestrian on the left that had begun crossing and was increasing her pace to go across us. Kamran had not intervened until I asked him to stop the car. I asked Kamran why he didn’t stop the car when he saw her, he said by the time he did his all around checks, he didnt realise that she would increase her pace and continue to cross. We spoke about the importance of stopping the model as soon as you see any potential hazard with pedestrians, even if we have a green light. \n"
+                            "We moved on to do a Finsbury Park AFT where Kamaran continued to make good progress with his taxonomy. \n"
+                            "He had a couple of foot pedal interventions where he was slow to bring his hands up to the steering wheel. We spoke about the importance of grabbing the steering wheel simultaneously with every intervention. \n"
+                            " Learning points discussed: \n"
+                            "- Kamran needs to bring the car up to a good speed before engaging back in AV, as otherwise it slows significantly before picking up speed again posing a hazard to following vehicles \n"
+                            "- Try to work on not having as many accidental interventions \n" 
+                            "- Ensure both hands grab the wheel when you intervene \n"
+                            "- Be more observant of pedestrians on the road, a green light does not mean we can drive on if there is a pedestrian on the road, the same as Zebra crossings."
 }
 
 positive_points = [
