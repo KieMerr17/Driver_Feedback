@@ -4,4 +4,3 @@ kaggle.json
 *.ipynb
 __pycache__/
 env.py
-.env

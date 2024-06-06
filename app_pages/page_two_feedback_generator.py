@@ -3,16 +3,12 @@ import streamlit as st
 import random
 import requests
 import os
-from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
-
-# Get the OPENAI_API_KEY from environment variables
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# Importing the API key from env.py
+from env import OPENAI_API_KEY
 
 # information required to generate feedback
-from form_info import routes, examples, positive_points, negative_points
+from form_info import drivers, routes, examples, positive_points, negative_points
 
 headers = {
     "Content-Type": "application/json",
@@ -20,7 +16,7 @@ headers = {
 }
 
 # Connect to Chat GPT to create feedback using selected fields
-def generate_feedback(driver_name, type_of_feedback, selected_route, positive_feedback, negative_feedback):
+def generate_feedback(selected_driver, type_of_feedback, selected_route, positive_feedback, negative_feedback):
 
     # Choose which example to use depending on route selected
     if selected_route == "Unit 1 - High Standard Driving":
@@ -31,7 +27,7 @@ def generate_feedback(driver_name, type_of_feedback, selected_route, positive_fe
         example_data = examples["Open-Road Testing"]
 
     # Message to be sent to Chat GPT
-    prompt = f"Using the following as an example of good feedback: {example_data}, provide me with brand new {type_of_feedback} feedback for {driver_name} on {selected_route}. Include {positive_feedback}, but also areas for improvement in {negative_feedback} give simple bullet points afterwords using {negative_feedback} on areas of improvement. Make sure everything reads as one complete feedback report, make sure selections are not enclosed in brackets or quotation marks"
+    prompt = f"Using the following as an example of good feedback: {example_data}, provide me with brand new {type_of_feedback} feedback for {selected_driver} on {selected_route}. Include {positive_feedback}, but also areas for improvement in {negative_feedback} give simple bullet points afterwords using {negative_feedback} on areas of improvement. Make sure everything reads as one complete feedback report, make sure selections are not enclosed in brackets or quotation marks"
 
     data = {
         "model": "gpt-3.5-turbo",
@@ -59,16 +55,18 @@ def feedback_page():
     st.title("Feedback Generator")
     st.write("#### To be used to quickly generate feedback for your driving sessions")
 
-    # Create the input field for driver's name
-    driver_name = st.text_input("Enter the driver's name")
+    # Create the drop down menus
+    selected_driver = st.selectbox("Select which driver you require feedback", drivers)
     type_of_feedback = st.selectbox("Select which type of feedback required", ["Positive", "Constructive", "Negative"])
     selected_route = st.multiselect("Select all routes required", routes)
     positive_feedback = st.multiselect("What did they do well?", positive_points)
     negative_feedback = st.multiselect("What do they need to improve?", negative_points)
 
+
+    
     # Add a button to generate feedback
     if st.button("Generate Feedback"):
-        feedback_text = generate_feedback(driver_name, type_of_feedback, selected_route, positive_feedback, negative_feedback)
+        feedback_text = generate_feedback(selected_driver, type_of_feedback, selected_route, positive_feedback, negative_feedback)
         if feedback_text is not None:
             edited_feedback = st.text_area("Feedback", value=feedback_text, height=200)
             st.write("You can edit the feedback above.")
