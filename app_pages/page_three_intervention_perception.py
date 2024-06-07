@@ -55,7 +55,7 @@ def intervention_perception():
         # Actions on clicking 'Intervene'
         if button_slot:
             intervention_time = elapsed_time
-            session_state.timer_running = True
+            session_state.timer_running = False
             
             st.write(round(intervention_time, 2))
 
